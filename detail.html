@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tag
+  -->
+  <title>Woodex - Get Quality Furniture</title>
+  <meta name="title" content="Woodex - Get Quality Furniture">
+  <meta name="description" content="This is an eCommerce html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Mr+De+Haviland&family=Roboto:wght@400;500;700&display=swap"
+    rel="stylesheet">
+
+  <!-- 
+    - preload images
+  -->
+
+</head>
+
+
+<style>
+
+    
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        line-height: 1.6;
+    }
+    .containerz {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    h1, h2 {
+        /* text-align: center; */
+        margin-bottom: 30px;
+    }
+    .product-detailz {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 50px;
+    }
+    .slider-containerz {
+        position: relative;
+        max-width: 100%;
+        /* margin: auto; */
+        overflow: hidden;
+        margin-bottom: 20px;
+        border-radius: 10px;
+    }
+    .slider-imagez {
+        width: 100%;
+        height: auto;
+        display: none;
+        border-radius: 10px;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .slider-imagez.active {
+        display: block;
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: black;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background-color: rgba(255, 255, 255, 0);
+    }
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    .prev:hover, .next:hover {
+        background-color: rgba(0,0,0,0.5);
+    }
+    .dotzs {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .dotz {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+    }
+    .active-dotz, .dotz:hover {
+        background-color: #717171;
+    }
+    .product-infoz {
+        flex: 1;
+    }
+    .product-title {
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+    .product-price {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-right: 10px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+    }
+    .button-primary {
+        background-color: #333;
+        color: white;
+    }
+    .button-secondary {
+        background-color: #eee;
+        color: #333;
+    }
+    .product-description, .product-detailzs {
+        margin-top: 20px;
+    }
+    .similar-products {
+        margin-top: 50px;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+    }
+    .product-card {
+        background-color: #f9f9f9;
+        /* padding: 20px; */
+        text-align: center;
+        border-radius: 5px;
+    }
+    .product-card img {
+       width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .product-card h3 {
+        margin: 10px 0;
+    }
+    .product-card p {
+        font-weight: bold;
+    }
+    .review-section {
+        margin-top: 50px;
+    }
+    .review {
+        background-color: #f9f9f9;
+        padding: 20px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+    .review-header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    .star-rating {
+        color: #ffd700;
+    }
+    .popupz {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        z-index: 1000;
+        width: 90%;
+        max-width: 400px;
+    }
+    .overlayz {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media screen and (min-width: 768px) {
+        .product-detailz {
+            flex-direction: row;
+        }
+        .slider-containerz {
+            flex: 1;
+            margin-right: 30px;
+            margin-bottom: 0;
+        }
+        .product-infoz {
+            flex: 1;
+        }
+        .product-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .product-title {
+            font-size: 2.5em;
+        }
+        .product-grid {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+</style>
+
+
+<body >
+
+  
+
+
+  <!-- 
+    - #SIDEBAR
+  -->
+
+
+ 
+
+ 
+
+
+
+
+
+
+<!-- ------------------------------------------------------------------------------------------------- -->
+
+
+<div class="containerz">
+    <!-- <h1>PRODUCT DETAIL</h1> -->
+    <div class="product-detailz">
+        <div class="slider-containerz">
+            <img class="slider-imagez active" src="./assets/images/product-10.jpg" alt="LD05 Lounge Chair 1">
+            <img class="slider-imagez" src="./assets/images/product-12.jpg" alt="LD05 Lounge Chair 2">
+            <img class="slider-imagez" src="./assets/images/product-6.jpg" alt="LD05 Lounge Chair 3">
+            <img class="slider-imagez" src="./assets/images/product-13.jpg" alt="LD05 Lounge Chair 4">
+            <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+            <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            <div class="dotzs">
+                <span class="dotz active-dotz" onclick="currentSlide(1)"></span>
+                <span class="dotz" onclick="currentSlide(2)"></span>
+                <span class="dotz" onclick="currentSlide(3)"></span>
+                <span class="dotz" onclick="currentSlide(4)"></span>
+            </div>
+        </div>
+        <div class="product-infoz">
+            <h2 class="product-title">SOFA CUM BED</h2>
+            <p class="product-price">30000.00 Rs</p>
+            <button class="button button-secondary">Check Out</button>
+            <button class="button button-primary" id="addToCartBtn">Add To Cart</button>
+            <div class="product-description">
+                <h3>Description</h3>
+                <p>Expertly rendered by Carl Hansen & Son, the LD05 lounge chair—first introduced in 1951 and enduring ever since—is available in oak or as a combination of oak and walnut, sourced from sustainable forestry. Choose from seat and back upholstery in a selection of leather options or in a custom fabric.</p>
+            </div>
+            <div class="product-detailzs">
+                <h3>Product Details</h3>
+                <ul>
+                    <li>Dimensions: 30"W x 33"D x 27"H</li>
+                    <li>Seat Height: 16"</li>
+                    <li>Frame Material: Solid oak or oak/walnut combination</li>
+                    <li>Upholstery: Premium leather or custom fabric options</li>
+                    <li>Weight Capacity: 300 lbs</li>
+                    <li>Assembly Required: Minimal assembly</li>
+                    <li>Warranty: 5-year manufacturer warranty</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Rest of the HTML remains the same -->
+
+   
+    
+</div>
+
+<div class="overlayz" id="overlayz"></div>
+<div class="popupz" id="addToCartpopupz">
+    <p>Your product has been added to the cart!</p>
+    <button class="button button-primary" id="closepopupzBtn">Close</button>
+</div>
+
+
+
+
+
+
+
+
+
+
+  
+  <!-- 
+    - #FOOTER
+  -->
+
+  
+
+
+
+
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+
+
+
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+
+
+
+  
+
+ 
+
+  <script>
+    let slideIndex = 1;
+    let slideInterval;
+
+    showSlides(slideIndex);
+    startSlideShow();
+
+    function changeSlide(n) {
+        showSlides(slideIndex += n);
+        resetSlideShowTimer();
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+        resetSlideShowTimer();
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("slider-imagez");
+        let dotzs = document.getElementsByClassName("dotz");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+            slides[i].classList.remove("active");
+        }
+        for (i = 0; i < dotzs.length; i++) {
+            dotzs[i].className = dotzs[i].className.replace(" active-dotz", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        slides[slideIndex-1].classList.add("active");
+        dotzs[slideIndex-1].className += " active-dotz";
+    }
+
+    function startSlideShow() {
+        slideInterval = setInterval(() => {
+            changeSlide(1);
+        }, 3000);
+    }
+
+    function resetSlideShowTimer() {
+        clearInterval(slideInterval);
+        startSlideShow();
+    }
+
+    const addToCartBtn = document.getElementById('addToCartBtn');
+    const closepopupzBtn = document.getElementById('closepopupzBtn');
+    const popupz = document.getElementById('addToCartpopupz');
+    const overlayz = document.getElementById('overlayz');
+
+    addToCartBtn.addEventListener('click', () => {
+        popupz.style.display = 'block';
+        overlayz.style.display = 'block';
+    });
+
+    closepopupzBtn.addEventListener('click', () => {
+        popupz.style.display = 'none';
+        overlayz.style.display = 'none';
+    });
+
+    overlayz.addEventListener('click', () => {
+        popupz.style.display = 'none';
+        overlayz.style.display = 'none';
+    });
+</script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,929 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font awesome CSS-->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <!-- Swiper CSS-->
+    <link rel="stylesheet" href="css/swiper.css">
+    <!-- Pages CSS Common-->
+    <link href="css/common.css" rel="stylesheet"/>
+    <!-- Index CSS -->
+    <link href="css/index.css"  rel="stylesheet"/>
+    <link href="css/card.css"  rel="stylesheet"/>
+    <link rel="stylesheet" href="./nav.css">
+    <title>Home Page</title>
+    <!-- JS database-->
+    <script src="js/database.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="icon" href="image/amaasicon.png" sizes="32x32">
+    <script>
+
+        window.addEventListener('load',function(e){
+            getAllProjects(6,"all",e);
+        });
+
+
+
+        
+    </script>
+  
+</head>
+<style>
+
+.heading {
+    color: #f0f0f0; /* Dark text */
+    padding: 16px 0; /* Equivalent to py-4 */
+    font-weight: bold;
+    font-size: 30px;
+}
+
+.description {
+    color: #f0f0f0; /* Dark text */
+    font-weight: bold;
+    margin-bottom: 16px; /* Equivalent to mb-4 */
+}
+
+
+    
+    /* Adjust the width of items when row-cols-2 is active */
+    @media (max-width: 576px) { /* Applies only on extra small screens */
+        .row-cols-2 .col {
+            width: 40% !important;
+        }
+    }
+
+/* Ensure the carousel has a consistent height */
+.carousel-inner {
+  height: 400px; /* Set a default height (adjust based on design) */
+}
+
+/* Make images responsive and ensure they fill the carousel without changing the height */
+.carousel-item img {
+  width: 100%;
+  height: 100vh; /* Ensure the image takes up the full height of the carousel */
+  object-fit: cover; /* Ensures the image is scaled and cropped to fit within the dimensions without distortion */
+}
+
+/* Media queries to make it responsive */
+@media (max-width: 767px) {
+  /* For mobile devices */
+  .carousel-inner {
+    height: 250px; /* Adjust the height for smaller screens */
+  }
+}
+
+@media (min-width: 768px) {
+  /* For laptops and larger screens */
+  .carousel-inner {
+    height: 100vh; /* Adjust the height for larger screens */
+  }
+}
+
+/* ------------------------------ our facalties ------------------------------- */
+
+
+.custom-section {
+    width: 100%;
+    margin: 50px auto;
+    line-height: 0;
+
+    position: relative; /* Keep it relative for the content within */
+}
+
+.custom-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.custom-article {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+
+    position: relative; /* Remove absolute positioning */
+}
+
+.custom-box {
+    background: black;
+    height: 25.3vw;
+    overflow: hidden;
+    position: relative;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border-radius: 5px;
+}
+
+.custom-box:nth-of-type(2) {
+    grid-column: 2 / 4;
+}
+
+.custom-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    font-size: 30px;
+   
+    padding: 5px;
+}
+
+.custom-description {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    font-size: 14px;
+    background-color:#003366  ;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 30px;
+    text-align: left; /* Align text to the left */
+    white-space: normal; /* Allow text to wrap normally */
+    line-height: 1.5; /* Increase line height for readability */
+    overflow: auto; /* Add scrolling if text overflows */
+}
+
+
+.custom-box:hover .custom-description {
+    opacity: 1;
+    color:#f0f0f0;
+}
+
+
+
+/* For devices with a max width of 1024px (Tablets) */
+@media (max-width: 1024px) {
+    .custom-article {
+        grid-template-columns: 1fr 1fr; /* Reduce to two columns */
+    }
+
+    .custom-box:nth-of-type(2) {
+        grid-column: span 2; /* Make the second box span both columns */
+    }
+
+    .custom-box {
+        height: 35vw; /* Adjust the height for smaller screens */
+    }
+}
+
+/* For devices with a max width of 768px (Portrait tablets and large phones) */
+@media (max-width: 768px) {
+    .custom-article {
+        grid-template-columns: 1fr; /* Stack the grid in a single column */
+    }
+
+    .custom-box {
+        height: 50vw; /* Further adjust the height for smaller screens */
+    }
+
+    .custom-box:nth-of-type(2) {
+        grid-column: auto; /* Reset the second box's column span */
+    }
+}
+
+/* For devices with a max width of 480px (Mobile devices) */
+@media (max-width: 480px) {
+    .custom-article {
+        grid-template-columns: 1fr; /* Single column for mobile view */
+    }
+
+    .custom-box {
+        height: auto; /* Let the height adjust based on content */
+    }
+
+    .custom-title {
+        font-size: 14px; /* Make the title slightly smaller */
+    }
+
+    .custom-description {
+        font-size: 12px; /* Adjust description font size */
+        padding: 15px; /* Adjust padding for smaller screens */
+    }
+    .carousel-item img {
+  width: 100%;
+  height: 30vh; /* Ensure the image takes up the full height of the carousel */
+  object-fit: cover; /* Ensures the image is scaled and cropped to fit within the dimensions without distortion */
+}
+}
+
+/* Button styles */
+.read-more-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #f0f0f0; /* Light gold color */
+    background-color: transparent;
+    border: 2px solid #f0f0f0; /* Border matching the text color */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-align: center;
+    margin-top: 20px; /* Space between the text and button */
+    outline: none;
+}
+
+/* Center the button */
+.custom-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect */
+.read-more-btn:hover {
+    background-color: #f0f0f0; /* Light gold background on hover */
+    color:#003366 ; /* Text turns white */
+}
+
+/* ------------------------animation------------------------------- */
+        
+@keyframes appear {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  .cardx__containerx, .custom-box, .mvs, .certification {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+  
+
+
+  .div-wth-shadow {
+    width: 100%;
+    height: 300px;
+    box-shadow: 0px 0px 1px #777676;
+}
+  
+
+.logo {
+    text-align: center; /* Center by default on larger screens */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* For mobile devices */
+    .logo {
+        text-align: left; /* Align logo to the left on mobile */
+    }
+
+    .logo img {
+        height: 200px;
+        margin-left: -30px; /* Adjust the height for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* For larger devices like laptops */
+    .logo img {
+        height: 200px; /* Adjust the height for laptops */
+    }
+}
+
+
+  
+
+</style>
+
+<body>
+
+    <header class="header">
+        <nav class="navpro containerpro">
+            <div class="navpro__datapro">
+                <div class="logo">
+                    <img src="./image2/logo-white-removebg-preview.png" alt="Your Logo">
+                  </div>
+                
+                <div class="navpro__togglepro" id="navpro-toggle">
+                    <i class="ri-menu-line navpro__burger"></i>
+                    <i class="ri-close-line navpro__close"></i>
+                </div>
+            </div>
+    
+            <!--=============== navpro MENU ===============-->
+            <div class="navpro__menupro" id="navpro-menu">
+                <ul class="navpro__listpro">
+                    <li><a href="#" class="navpro__link">HOME</a></li>
+    
+                    <li><a href="./about.html" class="navpro__link">ABOUT US</a></li>
+    
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            BUSINESS AREA  <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="news.html?service=construction" class="dropdown__linkpro">
+                                    AGRI MACHINARY
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="news.html?service=agriculture" class="dropdown__linkpro">
+                               CONSTRUCTION AND FORESTRY
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="news.html?service=aftermarket" class="dropdown__linkpro">
+                                    RAILWAY
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            PRODUCTS<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="product.html?service=construction" class="dropdown__linkpro">
+                                     PRECISION MACHINING PARTS
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="product.html?service=agriculture" class="dropdown__linkpro">
+                                     HYDRAULIC DAMPER PARTS
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="product.html?service=aftermarket" class="dropdown__linkpro">
+                                    POINT LINKAGE PARTS
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <!--=============== DROPDOWN 2 ===============-->
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            OUR FACILITIES<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="order.html?service=construction" class="dropdown__linkpro">
+                                    MACHINING
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=agriculture" class="dropdown__linkpro">
+                                    FORGING
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=aftermarket" class="dropdown__linkpro">
+                                    SURFACE FINISH
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=qualitys" class="dropdown__linkpro">
+                                    QUALITY AND TESTING
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=logistic" class="dropdown__linkpro">
+                                    LOGISTICS
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="./privacy.html" class="navpro__link">QUALITY</a></li>
+                    <li><a href="./contact.html" class="navpro__link">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+        <div class="container-fluid p-0" >
+            <div class="p-0">
+                <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        
+                    </div>
+                    <div class="carousel-inner" >
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="image2/home1.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption ">
+                                <div class="p-lg-0 h-100">
+                                    <div class="row h-100 justify-content-start align-items-center">
+                                        <div class="col-5 col-sm-3 col-lg-6 text-start">
+                                            <h1 class="text-white head-100 fw-bold">AGRI MACHINARY </h1>
+                                            <!-- <p class="text-dark-30 mb-4 fs-15 about-p">GSE is a manufacturer of 3-Point Linkage Parts for agricultural machinery. Product Portfolio offered to the agriculture segment includes 3-Point Linkage parts, Precision Machined Parts (PMP), Power take-off (PTO) components and Forgings.</p> -->
+                                            <a href="news.html" class="btn btn-yellow  px-4 px-lg-5 py-2 text-white fw-bold text-uppercase">Learn more</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="image2/rail.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption ">
+                                <div class="p-lg-0 h-100">
+                                    <div class="row h-100 justify-content-start align-items-center">
+                                        <div class="col-5 col-sm-3 col-lg-6 text-start">
+                                            <h1 class="text-white head-100 fw-bold">RAILWAY</h1>
+                                            <!-- <p class="text-dark-30 mb-4 fs-15 about-p" >GS ENTERPRISES is the leading manufacturer of bogie parts specialization in hydraulic damper parts. We are the leading railway parts manufacturer for safety critical components for both conventional and LHB coaches </p> -->
+                                            <a href="news.html" class="btn btn-yellow  px-4 px-lg-5 py-2 text-white fw-bold text-uppercase">Learn more</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="carousel-item " data-bs-interval="3000">
+                            <img src="image/banner3.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption ">
+                                <div class="p-lg-0 h-100">
+                                    <div class="row h-100 justify-content-start align-items-center">
+                                        <div class="col-5 col-sm-3 col-lg-6 text-start">
+                                            <h1 class="text-white head-100 fw-bold">CONSTRUCTION AND FORESTRY </h1>
+                                            <!-- <p class="text-dark-30 mb-4 fs-15 about-p">GSE is a supplier for precision machined parts (PMP) and Hydraulic Cylinder Parts to the mobile equipment market and in particular to the construction market. </p> -->
+                                            <a href="news.html" class="btn btn-yellow  px-4 px-lg-5 py-2 text-white fw-bold text-uppercase">Learn more</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                        
+<!-- adding one more -->
+                        <!-- <div class="carousel-item " data-bs-interval="3000"></div>
+                            <img src="image2/mech.jpg" class="d-block w-100" alt="...">
+                            <div class="carousel-caption ">
+                                <div class="p-lg-0 h-100">
+                                    <div class="row h-100 justify-content-start align-items-center">
+                                        <div class="col-5 col-sm-3 col-lg-6 text-start">
+                                            <h1 class="text-white head-100 fw-bold">MACHINING </h1>
+                                          
+                                            <a href="news.html" class="btn btn-yellow  px-4 px-lg-5 py-2 text-white fw-bold text-uppercase">Learn more</a>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div> -->
+                        
+                        
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class=" bg-light-60 pt-5 pb-5">
+                <div class="container-lg ">
+                    <div class="row">
+                        <div class="col-lg-5 col-lg-6">
+                            <img src="image2/over.jpg" class="w-100"/>
+                        </div>
+                        <div class="col-lg-6 col-lg-6 ms-auto mt-5 mt-sm-0 ">
+                            <!-- <h6 class="text-dark mb-4 fs-15">Slogan Here</h6> -->
+                            <h2 class="text-yellow mb-4 fs-30">OVERVIEW</h2>
+                            <p class="text-dark-30 mb-4 fs-15 about-p">GSE is an Indian based manufacturer of engineered systems and solutions. The Group is a leading supplier of systems and components for the off-highway market, tractor spare parts and accessories and hydraulic damper parts. GSE was established in 2016 to specialise in the manufacturing of train Bogie Parts. </p>
+
+
+                            <p class="text-dark-30 mb-4 fs-15 about-p">GSE is equipped with the latest manufacturing and testing equipment with a workforce of 25+ in all. GSE an established unit, was started Under the guidance of Aditya Kumar Tyagi, who is having rich experience in the industry to meet the requirements of Off-highway markets, hydraulic damper parts, Agriculture Implements and other Engineering Goods.</p>
+
+                            <button class="btn btn-yellow-t text-uppercase" onclick="window.location.href='./about.html';" >READ MORE </button>
+
+                           
+                            <!-- <div class="d-flex">
+                                <div class="me-3">
+                                    <i class="fa-solid fa-square-check text-yellow"></i>                                
+                                </div>
+                                <div class="text-dark-30">
+                                    We're in: Eastern Province ,Riyadh (so far)
+                                </div>
+                            </div> -->
+                            
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Business Area -->
+           
+            <div class="bg-yellow h-100">
+                <div class="container-lg d-flex flex-column align-items-center py-5 ">
+                    <div class="row text-center mt-3 justify-content-between align-items-stretch">
+                        <h1 class="heading">BUSINESS AREAS</h1>
+                        <p class="description">GS ENTERPRISE HAS A DIVERSIFIED BUSINESS PORTFOLIO CATERING TO MULTIPLE INDUSTRIES</p>
+                        
+                        <div class="containerx">
+                            <div class="cardx__containerx">
+                               <article class="cardx__articlex">
+                                  <img src="./image2/BOX-ARI2.jpg" alt="image" class="cardx__imgx" loading="lazy">
+                   
+                                  <div class="cardx__datax">
+                                    
+                                     <h2 class="cardx__titlex">AGRI MACHINARY</h2>
+                                     <span class="cardx__descriptionx">GSE is a manufacturer of 3-Point Linkage Parts for agricultural machinery. Product Portfolio offered to the agriculture segment includes 3-Point Linkage parts, Precision Machined Parts (PMP), Power take-off (PTO) components and Forgings.</span>
+                                     <a href="./news.html" class="card__buttonx">Read More</a>
+                                  </div>
+                               </article>
+                   
+                               <article class="cardx__articlex">
+                                  <img src="./image2/mech3.jpg" alt="image" class="cardx__imgx" loading="lazy">
+                   
+                                  <div class="cardx__datax">
+                                     <h2 class="cardx__titlex">Construction and Forestry</h2>
+                                     <span class="cardx__descriptionx">GSE is a supplier for precision machined parts (PMP) and Hydraulic Cylinder Parts to the mobile equipment market and in particular to the construction market. </span>
+                                     <a href="./news.html" class="card__buttonx">Read More</a>
+                                  </div>
+                               </article>
+                   
+                               <article class="cardx__articlex">
+                                  <img src="./image2/bix-rail2.jpg" alt="image" class="cardx__imgx" loading="lazy">
+                   
+                                  <div class="cardx__datax">
+                                     <h2 class="cardx__titlex">Railway</h2>
+                                     <span class="cardx__descriptionx">GS ENTERPRISES is the leading manufacturer of bogie parts specialization in hydraulic damper parts. We are the leading railway parts manufacturer for safety critical components for both conventional and LHB coaches</span>
+                                     <a href="./news.html" class="card__buttonx">Read More</a>
+                                  </div>
+                               </article>
+                            </div>
+                         </div>
+
+
+                    </div>
+                </div>
+            </div>
+             <!-- ------------------------------------ -->
+
+
+
+
+            
+    
+
+            <div class="bg-light-60">
+                <div class=" container-lg pb-5 pt-5">
+                    <div class=" row text-center pt-2">
+                        <h1 class="text-dark py-4 fw-bold fs-30">Why Choose Us</h1>
+                            <p class=" text-dark fw-bold mb-4">Precision Machined Parts with Expert Consultation and a Broad, Durable Product Range</p>
+                        <div class=" col-lg-4 mt-2">
+                            <div class="m-2 mx-auto bg-white  div-wth-shadow p-4">
+                                <img src="image/location.png" class="mt-3 img-work-div">
+                              
+                                <p class="mt-3">     <p class=" text-dark fw-bold mb-4">Operational Excellence</p>
+                                    Our highly skilled and enthusiastic staff is capable of fabricating precision machined parts with excellent finish, defect-free quality, and corrosion-resistant metal.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mt-2">
+                            <div class="m-2 mx-auto bg-white div-wth-shadow p-4">
+                                <img src="image/protection.png" class="mt-3 img-work-div">
+                                <p class="mt-3">   <p class=" text-dark fw-bold mb-4">Broad Product Range</p>  We provide durable, reliable precision parts, including connectors, auto components, screws, shafts, bushings, and custom pieces.</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 mt-2">
+                            <div class="m-2 mx-auto bg-white  div-wth-shadow p-4">
+                                <img src="image/chat.png" class="mt-3 img-work-div">
+                                <p class="mt-3">     <p class=" text-dark fw-bold mb-4">Expert Consultation</p>  Through our special consultation on manufacturability improvements as well as product design, we help our clients ensure the lowest possible cost for their projects.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=" container-fluid" style="margin: 0px auto;">
+                    <div class="text-center">
+                        <h1 class="text-dark py-4 fw-bold fs-30">Our facilities</h1>
+                        <p class=" text-dark fw-bold mb-4">GS Enterprises offers a wide range of services tailored to meet the needs of their customers</p>
+                    </div>
+                   <!--  -->  
+                   
+                    <div class="bg-light-60"></div>
+                    <div class="container-lg">
+                       
+                        <div class="one">
+
+
+
+
+                            <section class="custom-section">
+                                <article class="custom-article">
+                                    <div class="custom-box">
+                                        <img src="./image2/fac1.jpg" alt="Image 1">
+                                        <p class="custom-title">MACHINING</p>
+                                        <p class="custom-description">
+                                            GS ENTERPRISES is equipped with a wide variety of CNC & Conventional Machining equipment to manufacture high precision components with reduced cycle time to ensure the right quality and quantity for its customers. 
+                                            <br><br>
+                                            <button class="read-more-btn" onclick="window.location.href='order.html?service=construction';">READ MORE</button>
+                                        </p>
+                                    </div>
+                                    <div class="custom-box">
+                                        <img src="./image2/fac2.jpg" alt="Image 2">
+                                        <p class="custom-title">FORGING</p>
+                                        <p class="custom-description">
+                                            The forging division of the GS ENTERPRISES in India is located in the Ludhiana region. The forging facility has integrated 3-D CAD & CAM application for product and tool design. The facility is linked to the tool room and machining centers for high-speed cutting of dies.
+                                            <button class="read-more-btn" onclick="window.location.href='order.html?service=agriculture';">READ MORE</button>
+                                        </p>
+                                    </div>
+                                    <div class="custom-box">
+                                        <img src="./image2/fac3.jpg" alt="Image 3">
+                                        <p class="custom-title">SURFACE FINISH</p>
+                                        <p class="custom-description">
+                                            GS ENTERPRISES has various surface finishing technologies matching up with diverse customer & product requirements. The group has expertise in the surface finish processes and has built redundancies by having similar processes.
+                                            <button class="read-more-btn" onclick="window.location.href='order.html?service=aftermarket';">READ MORE</button>
+                                        </p>
+                                    </div>
+                                    <div class="custom-box">
+                                        <img src="./image2/fac41.jpg" alt="Image 4">
+                                        <p class="custom-title">QUALITY AND TESTING</p>
+                                        <p class="custom-description">
+                                            The highest level of quality standards is maintained in all of the processes and procedures. Utmost importance is given on maintaining the optimum level of quality at all levels from raw material testing, patrol and stage inspection to final inspection. 
+                                            <button class="read-more-btn" onclick="window.location.href='order.html?service=qualitys';">READ MORE</button>
+                                        </p>
+                                    </div>
+                                    <div class="custom-box">
+                                        <img src="./image2/Fac5.jpg" alt="Image 5">
+                                        <p class="custom-title">LOGISTICS</p>
+                                        <p class="custom-description">
+                                            Logistics services can help businesses streamline operations and improve efficiency by optimizing transportation routes and delivery times. GS ENTERPRISES regulate inventory levels and assess demand and supply. 
+                                            <button class="read-more-btn" onclick="window.location.href='order.html?service=logistic';">READ MORE</button>
+                                        </p>
+                                    </div>
+                                </article>
+                            </section>
+                         
+                            
+                                <div class="d-flex justify-content-center align-items-center py-5">
+                                    <a href="order.html" class="btn btn-yellow py-2 px-5 text-white">See More</a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+  
+<div class="container-fluid bg-footer pt-5">
+    <div class="container-lg mt-0 mt-lg-0 pt-0 pt-lg-0">
+        <div class="row pb-4">
+            <div class="col-lg-4 mt-5">
+                <a href="index.html"><img src="image2/logo-white-removebg-preview2.png" class="logo-brand"/></a>
+                <div class="mt-3">
+                    <h5 class="link-footer-parent"><span class="">ADDRESS</span> </h5>
+                    <p class="footer-company-desc">
+                        C-16, Sector-22, Meerut Road Industrial Area, Ghaziabad, Uttar Pradesh, 201003.
+                    </p>
+                    <p class="footer-company-desc"> Email: Gsenterprisesgzb@gmail.com <br>Email: info@gsenterprises.com</P> 
+                    <p class="footer-company-desc"> Phone No.: +91 9899972449 <br> Phone No.: +91 7982761179 </P>
+                      
+                </div>
+            </div>
+            <div class="col-lg-4 fw-bold mt-5 pe-5 ">
+                <h5 class="link-footer-parent"><span class="">USEFUL LINKS</span> </h5>
+                <div class="row row-cols-2 w-100">
+                    <div class="col">
+                        <ul class="nav flex-column ">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link ms-0 mb-1 px-0  link-footer">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link ms-0  mb-1 px-0 link-footer link-active-footer">About us</a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a href="news.html" class="nav-link ms-0 mb-1  px-0 link-footer">Business Area</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="projects.html" class="nav-link ms-0 mb-1  px-0 link-footer">Product</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a href="order.html" class="nav-link ms-0  mb-1 px-0 link-footer">Our facalties</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="nav flex-column ">
+                        </li>
+                        <li class="nav-item">
+                            <a href="privacy.html" class="nav-link ms-0 mb-1  px-0 link-footer">Quality</a>
+                        </li>
+                            <li class="nav-item"></li>
+                                <a href="contact.html" class="nav-link ms-0 mb-1 px-0  link-footer">Contact us</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a href="career.html" class="nav-link ms-0 mb-1  px-0 link-footer">Career</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="faq.html" class="nav-link ms-0 mb-1  px-0 link-footer">FAQ</a>
+                          
+                            <li class="nav-item">
+                                <a href="terms.html" class="nav-link ms-0 mb-1  px-0 link-footer">Term use</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <h5 class="link-footer-parent"><span class="">SOCAL MEDIA LINKS</span> </h5>
+
+                     
+                <div class="mt-4">
+                   
+                    <div class="d-inline-block   me-3">
+                        <a href="https://twitter.com/amaasrealestate">
+                            <i class="fa-brands fa-twitter footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://api.whatsapp.com/message/UZV7GQTD6S7FA1">
+                            <i class="fa-brands fa-whatsapp footer-links"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.youtube.com/channel/UCKftYeW9JhMnSlUM8ORun6w">
+                            <i class="fa-brands fa-youtube footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.instagram.com/amaasrealestate/">
+                            <i class="fa-brands fa-instagram footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.linkedin.com/company/amaasrealestate/">
+                            <i class="fa-brands fa-linkedin-in footer-links"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="bg-footer text-center text-white fw-bold fs-12 py-4 footer-border-top">
+        All rights reserved to GS Enterprise © 2024
+    </div>
+
+    <!--Bootstrap JS-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS-->
+    <script src="js/swiper.js"></script>
+    <!-- Pages JS Common-->
+    <script src="js/common.js"></script>
+
+        <script>
+
+            let tabsArray = document.querySelectorAll(".tabs li");
+            let divs = document.querySelector(".one");
+            tabsArray.forEach((ele) => {
+                ele.addEventListener("click", function (e) {
+                    tabsArray.forEach((ele) => {
+                        if(ele.classList.contains("project-active"))
+                         ele.classList.remove("project-active");
+                    });
+                     e.currentTarget.classList.add("project-active");
+                    var type=ele.getAttribute('data-type');
+                    var project=[];
+                    if(type=="all"){getAllProjects(6,"all",e)}
+                    else if(type=="apartment")
+                        getAllProjects(6,"apartment",e);
+                    else if(type=="villa")
+                        getAllProjects(6,"villa",e)
+                    else if(type=="sold")
+                        getAllProjects(6,"sold",e)
+                    else if(type=="forsale")
+                        getAllProjects(6,"forsale",e);
+                    
+                });
+            });
+    
+
+            var swtestomnial = new Swiper(".mySwiper", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction:false,
+                    },
+                    centeredSlides: true,
+                    loop:true,
+                    breakpoints: {
+                    "@0.00": {
+                        slidesPerView: 1,
+                        spaceBetween: 5,
+                    },
+                    "@2.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                    },
+                },
+            });
+            var swipartner = new Swiper(".swpartners", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction:false,
+                    },
+                    centeredSlides: true,
+                    loop:true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                    "@0.00": {
+                        slidesPerView: 2,
+                        spaceBetween: 2,
+                    },
+                    "@1.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 5,
+                    },
+                    "@2.00": {
+                        slidesPerView: 6,
+                        spaceBetween: 10,
+                    },
+                },
+            });
+        </script>
+        <script>document.addEventListener("DOMContentLoaded", function() {
+            // Select all elements with ids starting with 'targate'
+            const ids = ['targate1', 'targate2', 'targate3', 'targate4', 'targate5'];
+        
+            ids.forEach(id => {
+                const counter = document.getElementById(id); // Select the element by its unique ID
+                const updateCounter = () => {
+                    const target = +counter.getAttribute('data-target'); // Get target number
+                    const currentValue = +counter.innerText; // Get current number (starts at 0)
+                    const increment = target / 200; // Set the increment step
+        
+                    if (currentValue < target) {
+                        counter.innerText = Math.ceil(currentValue + increment); // Increment and round up
+                        setTimeout(updateCounter, 10); // Repeat the process every 10ms
+                    } else {
+                        counter.innerText = target; // Once the target is reached, set the final number
+                    }
+                };
+        
+                updateCounter(); // Start the counting process
+            });
+        });
+        </script>
+        <script src="./nav.js"></script>
+
+        <script>  
+            document.querySelectorAll('.dropdown-content a').forEach(link => {
+                link.addEventListener('click', function (event) {
+                    // Remove the active class from all buttons
+                    document.querySelectorAll('.sidebary-option').forEach(button => {
+                        button.classList.remove('active');
+                    });
+    
+                    // Add the active class to the clicked section's button
+                    const targetButton = document.querySelector(this.getAttribute('href'));
+                    targetButton.classList.add('active');
+                });
+            });
+        </script>
+</body>
+</html>

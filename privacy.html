@@ -1,0 +1,502 @@
+﻿
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fontawesome CSS-->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <!-- Pages CSS Common-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="./nav.css">
+    <link href="css/common.css" rel="stylesheet"/>
+
+    <link rel="icon" href="image/amaasicon.png" sizes="32x32">
+
+    <title>Quality</title>
+</head>
+
+<style>
+  
+    
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .certification {
+      width: 30%;
+      height: 100%px;
+      overflow: hidden;
+      /* border-radius: 10px; */
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .certification img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* .certification:hover img {
+      transform: scale(1.1); 
+    } */
+
+    @media (max-width: 768px) {
+      .certification {
+        width: 100%;
+        height: auto;
+      }
+    }
+/* --------------------------animation---------------------------------------- */
+        
+@keyframes appear {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  .cardx__containerx, .custom-box, .mvs, .certification {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+  
+
+  /* -------------------reactangle-------------------------- */
+
+  .rectangle {
+  width: 100%;
+  height: 400px;
+  background-image: url('./image2/quality.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 3rem;
+  color: white;
+  border-radius: 5px;
+  position: relative;
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+}
+
+.rectangle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Initial background overlay */
+  transition: background-color 0.4s ease; /* Transition for hover effect */
+  border-radius: 5px;
+  z-index: 1;
+}
+
+.rectangle:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the overlay on hover */
+}
+
+.rectangle h1, .rectangle p {
+  position: relative;
+  z-index: 2;
+}
+
+.rectangle h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.rectangle p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .rectangle h1 {
+    font-size: 2rem;
+  }
+
+  .rectangle p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rectangle {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    height: 300px;
+  }
+
+  .rectangle h1 {
+    font-size: 1.8rem;
+  }
+
+  .rectangle p {
+    font-size: 0.9rem;
+  }
+}
+  
+  /* ------------------------animation----------------------- */
+  @keyframes appear {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  .rectangle {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+
+  .title {
+    color: #FFF;
+    font-size: 5rem;
+    padding: 270px 0 35px 0;
+    margin: 0;
+}
+  
+.logo {
+    text-align: center; /* Center by default on larger screens */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* For mobile devices */
+    .logo {
+        text-align: left; /* Align logo to the left on mobile */
+    }
+
+    .logo img {
+        height: 200px;
+        margin-left: -30px; /* Adjust the height for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* For larger devices like laptops */
+    .logo img {
+        height: 200px; /* Adjust the height for laptops */
+    }
+}
+
+</style>
+<body>
+
+  <header class="header">
+    <nav class="navpro containerpro">
+        <div class="navpro__datapro">
+          <div class="logo">
+            <img src="./image2/logo-white-removebg-preview.png" alt="Your Logo">
+          </div>
+        
+            
+            <div class="navpro__togglepro" id="navpro-toggle">
+                <i class="ri-menu-line navpro__burger"></i>
+                <i class="ri-close-line navpro__close"></i>
+            </div>
+        </div>
+
+        <!--=============== navpro MENU ===============-->
+        <div class="navpro__menupro" id="navpro-menu">
+            <ul class="navpro__listpro">
+                <li><a href="./index.html" class="navpro__link">HOME</a></li>
+
+                <li><a href="./about.html" class="navpro__link">ABOUT US</a></li>
+
+                <!--=============== DROPDOWN 1 ===============-->
+                <li class="dropdown__itempro">
+                    <div class="navpro__link">
+                        BUSINESS AREA  <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menupro">
+                        <li>
+                            <a href="news.html?service=construction" class="dropdown__linkpro">
+                                AGRI MACHINARY
+                            </a>                          
+                        </li>
+
+                        <li>
+                            <a href="news.html?service=agriculture" class="dropdown__linkpro">
+                           CONSTRUCTION AND FORESTRY
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="news.html?service=aftermarket" class="dropdown__linkpro">
+                                RAILWAY
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+                
+                <li class="dropdown__itempro">
+                    <div class="navpro__link">
+                        PRODUCTS<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menupro">
+                        <li>
+                            <a href="product.html?service=construction" class="dropdown__linkpro">
+                                 PRECISION MACHINING PARTS
+                            </a>                          
+                        </li>
+
+                        <li>
+                            <a href="product.html?service=agriculture" class="dropdown__linkpro">
+                                 HYDRAULIC DAMPER PARTS
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="product.html?service=aftermarket" class="dropdown__linkpro">
+                                POINT LINKAGE PARTS
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--=============== DROPDOWN 2 ===============-->
+                <li class="dropdown__itempro">
+                    <div class="navpro__link">
+                        OUR FACILITIES<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                    </div>
+
+                    <ul class="dropdown__menupro">
+                        <li>
+                            <a href="order.html?service=construction" class="dropdown__linkpro">
+                                MACHINING
+                            </a>                          
+                        </li>
+
+                        <li>
+                            <a href="order.html?service=agriculture" class="dropdown__linkpro">
+                                FORGING
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="order.html?service=aftermarket" class="dropdown__linkpro">
+                                SURFACE FINISH
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="order.html?service=qualitys" class="dropdown__linkpro">
+                                QUALITY AND TESTING
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="order.html?service=logistic" class="dropdown__linkpro">
+                                LOGISTICS
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="./privacy.html" class="navpro__link">QUALITY</a></li>
+                <li><a href="./contact.html" class="navpro__link">CONTACT</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+    <div class=" bg-scan" style="background-image:url(./image2/back-quality.jpg);">
+        <div class=" container-lg">
+            <nav class="pt-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-a">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">QUALITY & CERTIFICATIONS</li>
+                </ol>
+            </nav>
+            <h1 class="title">QUALITY & CERTIFICATION</h1>
+        </div>
+    </div>
+
+    <div class="bg-light-60">
+        <div class="container-lg  py-5">
+            <div class="py-5">
+                <h2 class="text-yellow mb-4 display-3 fw-bold"> QUALITY – </h2>
+               <p> GS ENTERPRISES is a leading manufacturer of Auto parts and sub systems for off highway equipment. <br>We are committed to enhance customer satisfaction and achieve sustainable growth through:</p>
+               <p>1. Manufacture and supply of consistent quality products at an optimum cost and on time delivery through mutually beneficial supplier relationship.</p>
+               <p>2.Assessment of organizational context and employee engagement.</p>
+               <p>3. Satisfy applicable requirement and Continual Improvement in all spheres of activities in our business by means first time right approach, robust manufacturing processes, up gradation of technology, people skills and practicing quality management systems.</p>
+               <p>4. Complying with safety norms and promoting an environment friendly organization via good corporate governance.</p>
+             
+               <p>This policy shall be made available to all the employees, public and other interested parties</p>
+               <br><br>
+              <p>Quality control is not merely an obligation at GS ENTERPRISES. It constitutes the very foundation of our enduring reputation. Our single-minded commitment to quality and focus on precision dictates the best practices in manufacturing and testing processes, systems and protocol. To monitor standards and uphold the maintainence of adherence to customer specifications at all times, our facilities feature the most advanced equipment to ensure that no component that leaves our production lines falls short of expectations. Having instilled a strong belief in "Doing the Right Things Right the First Time" throughout the fabric of the company, we take great pride in not just satisfying, but in delighting our customers.</p>
+            </div>
+            <div class="rectangle">
+                <h1>OUR QUALITY </h1>
+              </div>
+        </div>
+        
+
+    </div>
+
+
+
+    <div class="bg-light-60 py-5" >
+        <div class=" container-lg py-5">
+           <div class=" row row-cols-1 row-cols-lg-2 ">
+               <div class="col ms-0 mt-2">
+                   <h2 class="text-yellow mb-4 display-3 fw-bold"> Certification – </h2>
+                   <!-- <h6 class="text-dark mb-4 fs-15">– ISO, MSME, IEC.</h6> -->
+              
+               </div>
+              
+              </div>
+              <div class="container">
+                <div class="certification">
+                  <img src="image2/cer.png" alt="Certification 1">
+                </div>
+                <div class="certification">
+                  <img src="image2/cer2.png" alt="Certification 2">
+                </div>
+                <div class="certification">
+                  <img src="image2/cer3.png" alt="Certification 3">
+                </div>
+                
+           </div>
+        </div>
+   </div>
+
+    <div class="container-fluid bg-footer pt-5">
+        <div class="container-lg mt-0 mt-lg-0 pt-0 pt-lg-0">
+            <div class="row pb-4">
+                <div class="col-lg-4 mt-5">
+                    <a href="index.html"><img src="image2/logo-white-removebg-preview2.png" class="logo-brand"/></a>
+                   <div class="mt-3">
+                    <h5 class="link-footer-parent"><span class="">ADDRESS</span> </h5>
+                    <p class="footer-company-desc">
+                        C-16, Sector-22, Meerut Road Industrial Area, Ghaziabad, Uttar Pradesh, 201003.
+                    </p>
+                    <p class="footer-company-desc"> Email: Gsenterprisesgzb@gmail.com <br>Email: info@gsenterprises.com</P> 
+                    <p class="footer-company-desc"> Phone No.: +91 9899972449 <br> Phone No.: +91 7982761179 </P>
+                      
+                </div>
+                </div>
+                <div class="col-lg-4 fw-bold mt-5 pe-5 ">
+                    <h5 class="link-footer-parent"><span class="">USEFUL LINKS</span> </h5>
+                    <div class="row row-cols-2 w-100">
+                        <div class="col">
+                            <ul class="nav flex-column ">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link ms-0 mb-1 px-0  link-footer">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link ms-0  mb-1 px-0 link-footer link-active-footer">About us</a>
+                                </li>
+                                <li class="nav-item"></li>
+                                    <a href="news.html" class="nav-link ms-0 mb-1  px-0 link-footer">Business Area</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="projects.html" class="nav-link ms-0 mb-1  px-0 link-footer">Product</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a href="order.html" class="nav-link ms-0  mb-1 px-0 link-footer">Our facalties</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="nav flex-column ">
+                            </li>
+                            <li class="nav-item">
+                                <a href="privacy.html" class="nav-link ms-0 mb-1  px-0 link-footer">Quality</a>
+                            </li>
+                                <li class="nav-item"></li>
+                                    <a href="contact.html" class="nav-link ms-0 mb-1 px-0  link-footer">Contact us</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a href="career.html" class="nav-link ms-0 mb-1  px-0 link-footer">Career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="faq.html" class="nav-link ms-0 mb-1  px-0 link-footer">FAQ</a>
+                              
+                                <li class="nav-item">
+                                    <a href="terms.html" class="nav-link ms-0 mb-1  px-0 link-footer">Term use</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                   <h5 class="link-footer-parent"><span class="">SOCAL MEDIA LINKS</span> </h5>
+                    <div class="mt-4">
+                      <!-- text -->
+                        <div class="d-inline-block   me-3">
+                            <a href="https://twitter.com/amaasrealestate">
+                                <i class="fa-brands fa-twitter footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://api.whatsapp.com/message/UZV7GQTD6S7FA1">
+                                <i class="fa-brands fa-whatsapp footer-links"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.youtube.com/channel/UCKftYeW9JhMnSlUM8ORun6w">
+                                <i class="fa-brands fa-youtube footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.instagram.com/amaasrealestate/">
+                                <i class="fa-brands fa-instagram footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.linkedin.com/company/amaasrealestate/">
+                                <i class="fa-brands fa-linkedin-in footer-links"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-footer text-center text-white fw-bold  fs-12 py-4 footer-border-top">
+         All rights reserved to GS Enterprise © 2024
+    </div>
+    <!-- Bootstrap JS-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Pages JS Common-->
+    <script src="js/common.js"></script>
+<script src="./nav.js"></script>
+</body>
+</html>

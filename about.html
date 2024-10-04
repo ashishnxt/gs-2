@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fontawesome CSS-->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <!-- Swiper CSS-->
+    <link rel="stylesheet" href="css/swiper.css"/>
+    <link rel="stylesheet" href="./nav.css">
+    <!-- Pages CSS Common-->
+    <link href="css/common.css" rel="stylesheet"/> 
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  
+    <link rel="icon" href="image/amaasicon.png" sizes="32x32">
+    <title>About us</title>
+    <style>
+
+        
+        .ceo-img{
+            width: 100%;
+            height: auto;
+        }
+        .speech-p{
+            color: #6C6D70;
+            font-size: 16px;
+            word-spacing: 3px;
+        }
+
+
+
+
+
+    
+   
+
+
+    .container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .certification {
+      width: 30%;
+      height: 100%px;
+      overflow: hidden;
+      /* border-radius: 10px; */
+      transition: transform 0.3s ease-in-out;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .certification img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* .certification:hover img {
+      transform: scale(1.1); 
+    } */
+
+    @media (max-width: 768px) {
+      .certification {
+        width: 100%;
+        height: auto;
+      }
+    }
+/* -----------------------rectangle-------------------------- */
+
+    .rectangle {
+  width: 100%;
+  height: 400px;
+  background-image: url('./image2/leader.jpg'); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  margin-top: 3rem;
+  color: white;
+  border-radius: 15px;
+  position: relative;
+  transition: all 0.4s ease; /* Smooth transition for hover effect */
+}
+
+.rectangle::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2); /* Initial background overlay */
+  transition: background-color 0.4s ease; /* Transition for hover effect */
+  border-radius: 15px;
+  z-index: 1;
+}
+
+.rectangle:hover::before {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken the overlay on hover */
+}
+
+.rectangle h1, .rectangle p {
+  position: relative;
+  z-index: 2;
+}
+
+.rectangle h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.rectangle p {
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .rectangle h1 {
+    font-size: 2rem;
+  }
+
+  .rectangle p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .rectangle {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .rectangle h1 {
+    font-size: 1.8rem;
+  }
+
+  .rectangle p {
+    font-size: 0.9rem;
+  }
+}
+/* ------------------------------animation------------------------------------ */
+            
+@keyframes appear {
+    from {
+      opacity: 0;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      scale: 1;
+    }
+  }
+  
+  .cardx__containerx, .custom-box, .mvs, .certification, .rectangle {
+    animation: appear linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 30%;
+  }
+  
+
+  .title {
+    color: #FFF;
+    font-size: 5rem;
+    padding: 270px 0 35px 0;
+    margin: 0;
+}
+  
+
+.logo {
+    text-align: center; /* Center by default on larger screens */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* For mobile devices */
+    .logo {
+        text-align: left; /* Align logo to the left on mobile */
+    }
+
+    .logo img {
+        height: 200px;
+        margin-left: -30px; /* Adjust the height for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* For larger devices like laptops */
+    .logo img {
+        height: 200px; /* Adjust the height for laptops */
+    }
+}
+
+  
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <nav class="navpro containerpro">
+            <div class="navpro__datapro">
+              <div class="logo">
+                    <img src="./image2/logo-white-removebg-preview.png" alt="Your Logo">
+                  </div>
+                
+                
+                <div class="navpro__togglepro" id="navpro-toggle">
+                    <i class="ri-menu-line navpro__burger"></i>
+                    <i class="ri-close-line navpro__close"></i>
+                </div>
+            </div>
+    
+            <!--=============== navpro MENU ===============-->
+            <div class="navpro__menupro" id="navpro-menu">
+                <ul class="navpro__listpro">
+                    <li><a href="./index.html" class="navpro__link">HOME</a></li>
+    
+                    <li><a href="./about.html" class="navpro__link">ABOUT US</a></li>
+    
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            BUSINESS AREA  <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="news.html?service=construction" class="dropdown__linkpro">
+                                    AGRI MACHINARY
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="news.html?service=agriculture" class="dropdown__linkpro">
+                               CONSTRUCTION AND FORESTRY
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="news.html?service=aftermarket" class="dropdown__linkpro">
+                                    RAILWAY
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            PRODUCTS<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="product.html?service=construction" class="dropdown__linkpro">
+                                     PRECISION MACHINING PARTS
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="product.html?service=agriculture" class="dropdown__linkpro">
+                                     HYDRAULIC DAMPER PARTS
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="product.html?service=aftermarket" class="dropdown__linkpro">
+                                    POINT LINKAGE PARTS
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <!--=============== DROPDOWN 2 ===============-->
+                    <li class="dropdown__itempro">
+                        <div class="navpro__link">
+                            OUR FACILITIES<i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+    
+                        <ul class="dropdown__menupro">
+                            <li>
+                                <a href="order.html?service=construction" class="dropdown__linkpro">
+                                    MACHINING
+                                </a>                          
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=agriculture" class="dropdown__linkpro">
+                                    FORGING
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=aftermarket" class="dropdown__linkpro">
+                                    SURFACE FINISH
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=qualitys" class="dropdown__linkpro">
+                                    QUALITY AND TESTING
+                                </a>
+                            </li>
+    
+                            <li>
+                                <a href="order.html?service=logistic" class="dropdown__linkpro">
+                                    LOGISTICS
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+    
+                    <li><a href="./privacy.html" class="navpro__link">QUALITY</a></li>
+                    <li><a href="./contact.html" class="navpro__link">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class=" bg-scan" style="background-image:url('./image/back21.jpg');">
+        <div class=" container-lg">
+            <nav class="pt-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-a">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">About us</li>
+                </ol>
+              </nav>
+            <h1 class="title">ABOUT US</h1>
+        </div>
+    </div>
+    <div class=" bg-light-60 pt-5 pb-5">
+        <div class="container-lg ">
+            <div class="row">
+                <div class=" col-lg-6">
+                    <img src="image2/over.jpg" class="w-100"/>
+                </div>
+                <div class="col-lg-6 ms-auto mt-5 mt-sm-0 ">
+                    <h2 class="text-yellow mb-4 fs-30">OVERVIEW</h2>
+                    <p class="text-dark-30 mb-4 fs-15 about-p">GSE is an Indian based manufacturer of engineered systems and solutions. The Group is a leading supplier of systems and components for the off-highway market, tractor spare parts and accessories and hydraulic damper parts. GSE was established in 2016 to specialise in the manufacturing of train Bogie Parts. </p>
+
+<br>
+                    <!-- <h2 class="text-yellow mb-4 fs-30">About GS Enterprise</h2> -->
+                    <p class="text-yellow mb-4 fs-15 about-p">About GS Enterprise</p>
+                    <p class="text-dark-30 mb-4 fs-15 about-p">GSE is equipped with the latest manufacturing and testing equipment with a workforce of 25+ in all. GSE an established unit, was started Under the guidance of Aditya Kumar Tyagi, who is having rich experience in the industry to meet the requirements of Off-highway markets, hydraulic damper parts, Agriculture Implements and other Engineering Goods.</p>
+
+
+                    <div class="d-flex  mb-2">
+                        <div class="me-3">
+                            <i class="fa-solid fa-square-check text-yellow"></i>                                
+                        </div>
+                        <div class="text-dark-30">
+                            We are the manufacturer of engineered systems and solutions and are one of the leading suppliers of systems and components for the off-highway market in the agriculture, construction forestry & mining (CFM). We provide comprehensive solutions and manufacture high-quality, critical products and components for Off Highway Vehicles (OHV) industry.
+                        </div>
+                    </div>
+                    <div class="d-flex mb-2">
+                        <div class="me-3">
+                            <i class="fa-solid fa-square-check text-yellow"></i>                                
+                        </div>
+                        <div class="text-dark-30">
+
+                            Our product portfolio includes core product verticals of 3-point linkage systems (3PL) and precision machined parts (PMP) as well as adjacent product verticals of power take off, fabrications and Railway (Bogie components) there of.
+
+
+                        </div>
+                    </div>
+                    <!-- <div class="d-flex">
+                        <div class="me-3">
+                            <i class="fa-solid fa-square-check text-yellow"></i>                                
+                        </div>
+                        <div class="text-dark-30">
+                            We're in:  Eastern Province ,Riyadh (so far)
+                        </div>
+                    </div> -->
+                   
+                    
+                </div>
+            </div>
+            
+        </div>
+    </div>
+        
+    <div class="bg-yellow h-100">
+        <div class="container-lg d-flex flex-column align-items-center py-5 ">
+            <div class="row text-center mt-3 justify-content-between align-items-stretch">
+
+                <div class="col-lg-4 mt-4  mvs">
+                    <div class="bg-white px-3 py-5  h-100">
+                        <img src="image/vision.png" class="mt-4 img-work-div" />
+                        <h3 class="mt-4 headline3">Our Vision </h3>
+                        <p class="text-dark mt-3">Become a significant global business and supply partner of core systems to the off-highway market with a significant market presence in agricultural and construction market.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mvs">
+                    <div class="bg-white px-3 py-5  h-100">
+                        <img src="image/mession.png" class="mt-4 img-work-div" />
+                        <h3 class="mt-4 headline3" >Our Mission</h3>
+                        <p class="text-dark mt-3">Become recognized supplier of Agriculture machinery parts, construction forestry and Railway Equipment parts globally with significant market presence.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-4 mvs">
+                    <div class="bg-white px-3 py-5 h-100">
+                        <img src="image/goals.png" class="mt-4 img-work-div"/>
+                        <h3 class="mt-4 headline3"> Our Strategy</h3>
+                        <p class="text-dark mt-3">
+                            Leverage integrated precision engineering capabilities and established global business model, to tap additional business opportunities and expand addressable market.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- leader ship banner -->
+  <div class=" bg-light-60 py-5">
+        <div class="container-lg ">
+    <div class="rectangle">
+        <h1>Leadership </h1>
+        <p>The leadership team of GSE has been instrumental in chartering the growth of the company as a trusted agricultural and infrastructure solutions brand. Our leaders have played a remarkable role in leveraging GS ENTERPRISES inherent strengths to navigate unprecedented challenges and grow consistently in capabilities, influence, technology and response to customer needs.</p>
+      </div>
+</div></div>
+     <!-- ---------------------------- -->
+
+    <div class="bg-light-60 py-5">
+         <div class=" container-lg py-5">
+            <div class=" row row-cols-1 row-cols-lg-2 justify-content-end">
+                <div class="col ms-0 mt-2">
+                    <h2 class="text-yellow mb-4 display-3 fw-bold">Board of Director – </h2>
+                    <h6 class="text-dark mb-4 fs-15">Aditya Kumar Tyagi – Chairman and managing Director</h6>
+                    <p class="speech-p">Mr. Aditya Kumar Tyagi is the Chairman and Managing Director of the Company.  He has led the transformative journey of the company to profitable growth and global reach, through innovation, strategic planning and technological collaborations.  He has 35 years of work experience in the manufacturing industry. His initiatives led to GSE introducing a series of innovative products that demonstrate excellence in manufacturing quality, market intelligence and enhanced customer value across India and other emerging economies. It helped the company to evolve from being a product-led company to an innovation and technology-driven brand that crafts customer-centric solutions for enhanced productivity.</p>
+                    <button class="btn btn-yellow-t text-uppercase" >BROCHURE </button>
+                </div>
+                <div class="col mt-4">
+                    <div class=" ms-lg-5" style="border: 10px solid #003366 ; border-radius: 5px;">
+                        <img src="image2/BOD.jpg" alt="Board of Director" class="ceo-img mx-auto">
+                    </div>
+                </div>
+            </div>
+         </div>
+    </div>
+
+
+
+    <div class="bg-light-60 py-5">
+        <div class=" container-lg py-5">
+           <div class=" row row-cols-1 row-cols-lg-2 ">
+               <div class="col ms-0 mt-2">
+                   <h2 class="text-yellow mb-4 display-3 fw-bold"> Certification – </h2>
+                   <!-- <h6 class="text-dark mb-4 fs-15">– ISO, MSME, IEC.</h6> -->
+              
+               </div>
+              
+              </div>
+              <div class="container">
+                <div class="certification">
+                  <img src="image2/cer.png" alt="Certification 1">
+                </div>
+                <div class="certification">
+                  <img src="image2/cer2.png" alt="Certification 2">
+                </div>
+                <div class="certification">
+                  <img src="image2/cer3.png" alt="Certification 3">
+                </div>
+                
+           </div>
+        </div>
+   </div>
+
+
+
+
+   
+</div>
+
+
+
+<div class="container-fluid bg-footer pt-5">
+    <div class="container-lg mt-0 mt-lg-0 pt-0 pt-lg-0">
+        <div class="row pb-4">
+            <div class="col-lg-4 mt-5">
+                <a href="index.html"><img src="image2/logo-white-removebg-preview2.png" class="logo-brand"/></a>
+                <div class="mt-3">
+                    <h5 class="link-footer-parent"><span class="">ADDRESS</span> </h5>
+                    <p class="footer-company-desc">
+                        C-16, Sector-22, Meerut Road Industrial Area, Ghaziabad, Uttar Pradesh, 201003.
+                    </p>
+                    <p class="footer-company-desc"> Email: Gsenterprisesgzb@gmail.com <br>Email: info@gsenterprises.com</P> 
+                    <p class="footer-company-desc"> Phone No.: +91 9899972449 <br> Phone No.: +91 7982761179 </P>
+                      
+                </div>
+            </div>
+             <div class="col-lg-4 fw-bold mt-5 pe-5 ">
+                <h5 class="link-footer-parent"><span class="">USEFUL LINKS</span> </h5>
+                <div class="row row-cols-2 w-100">
+                    <div class="col">
+                        <ul class="nav flex-column ">
+                            <li class="nav-item">
+                                <a href="index.html" class="nav-link ms-0 mb-1 px-0  link-footer">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="about.html" class="nav-link ms-0  mb-1 px-0 link-footer link-active-footer">About us</a>
+                            </li>
+                            <li class="nav-item"></li>
+                                <a href="news.html" class="nav-link ms-0 mb-1  px-0 link-footer">Business Area</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="projects.html" class="nav-link ms-0 mb-1  px-0 link-footer">Product</a>
+                            </li>
+                           
+                            <li class="nav-item">
+                                <a href="order.html" class="nav-link ms-0  mb-1 px-0 link-footer">Our facalties</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="nav flex-column ">
+                        </li>
+                        <li class="nav-item">
+                            <a href="privacy.html" class="nav-link ms-0 mb-1  px-0 link-footer">Quality</a>
+                        </li>
+                            <li class="nav-item"></li>
+                                <a href="contact.html" class="nav-link ms-0 mb-1 px-0  link-footer">Contact us</a>
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a href="career.html" class="nav-link ms-0 mb-1  px-0 link-footer">Career</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="faq.html" class="nav-link ms-0 mb-1  px-0 link-footer">FAQ</a>
+                          
+                            <li class="nav-item">
+                                <a href="terms.html" class="nav-link ms-0 mb-1  px-0 link-footer">Term use</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 mt-5">
+                <h5 class="link-footer-parent"><span class="">SOCAL MEDIA LINKS</span> </h5>
+
+                       
+                <div class="mt-4">
+                   
+                    <div class="d-inline-block   me-3">
+                        <a href="https://twitter.com/amaasrealestate">
+                            <i class="fa-brands fa-twitter footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://api.whatsapp.com/message/UZV7GQTD6S7FA1">
+                            <i class="fa-brands fa-whatsapp footer-links"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.youtube.com/channel/UCKftYeW9JhMnSlUM8ORun6w">
+                            <i class="fa-brands fa-youtube footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.instagram.com/amaasrealestate/">
+                            <i class="fa-brands fa-instagram footer-links"></i>
+                        </a>
+                    </div>
+                    <div class="d-inline-block  me-3">
+                        <a href="https://www.linkedin.com/company/amaasrealestate/">
+                            <i class="fa-brands fa-linkedin-in footer-links"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="bg-footer text-center text-white fw-bold  fs-12 py-4 footer-border-top">
+         All rights reserved to GS Enterprise © 2024
+    </div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/swiper.js"></script>
+    <script>
+        
+        var swipartner = new Swiper(".swpartners", {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                    autoplay: {
+                        delay: 5000,
+                        disableOnInteraction:false,
+                    },
+                    centeredSlides: true,
+                    loop:true,
+                    pagination: {
+                        el: ".swiper-pagination",
+                        clickable: true,
+                    },
+                    breakpoints: {
+                    "@0.00": {
+                        slidesPerView: 2,
+                        spaceBetween: 2,
+                    },
+                    "@1.00": {
+                        slidesPerView: 3,
+                        spaceBetween: 5,
+                    },
+                    "@2.00": {
+                        slidesPerView: 6,
+                        spaceBetween: 10,
+                    },
+            },
+        });
+        var speech=document.getElementById('speechmore');
+        var n=0;
+        speech.addEventListener('click',function(e){
+            if(n==0)
+            {
+                speech.previousElementSibling.innerHTML+="  We are the manufacturer of engineered systems and solutions and are one of the leading suppliers of systems and components for the off-highway market in the agriculture, construction forestry & mining (CFM). We provide comprehensive solutions and manufacture high-quality, critical products and components for Off Highway Vehicles (OHV) industry.";
+                n++;    
+                speech.classList.add('d-none');
+            }
+            
+        });
+
+    </script>
+    <script>document.addEventListener("DOMContentLoaded", function() {
+        // Select all elements with ids starting with 'targate'
+        const ids = ['targate1', 'targate2', 'targate3', 'targate4', 'targate5'];
+    
+        ids.forEach(id => {
+            const counter = document.getElementById(id); // Select the element by its unique ID
+            const updateCounter = () => {
+                const target = +counter.getAttribute('data-target'); // Get target number
+                const currentValue = +counter.innerText; // Get current number (starts at 0)
+                const increment = target / 200; // Set the increment step
+    
+                if (currentValue < target) {
+                    counter.innerText = Math.ceil(currentValue + increment); // Increment and round up
+                    setTimeout(updateCounter, 10); // Repeat the process every 10ms
+                } else {
+                    counter.innerText = target; // Once the target is reached, set the final number
+                }
+            };
+    
+            updateCounter(); // Start the counting process
+        });
+    });
+    
+    </script>
+
+    <script src="./nav.js"></script>
+</body>
+</html>

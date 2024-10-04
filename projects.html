@@ -1,0 +1,826 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Fontawesome CSS-->
+    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="fontawesome/css/solid.css">
+    <link rel="stylesheet" href="fontawesome/css/brands.css">
+    <!-- Pages CSS Common-->
+    <link href="css/common.css" rel="stylesheet"/>
+
+    <!-- JS Database-->
+    <script src="js/database.js"></script>
+
+    <link rel="icon" href="image/amaasicon.png" sizes="32x32">
+
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+
+    <!-- Fontawesome CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+       
+
+    <title>News</title>
+
+    <style>
+        
+        .img-news{
+            width: 100%;
+            height: 250px;
+        }
+        .news-href{
+            color: #E0C389;
+            text-decoration: none !important;
+
+            transition: all 0.5s;
+        }
+        .news-href:hover{
+            color: #dba843 !important;
+        }
+
+
+
+/* ----------------------------------busness area--------------------------------------- */
+ 
+/* Base styles */
+.containery {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebary {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.sidebary-option {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    text-align: left;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.sidebary-option.active {
+    background-color: #003366;
+    color: white;
+}
+
+.content {
+    flex-grow: 1;
+ 
+    background-color: #ffffff;
+}
+
+.content h1 {
+    color: #003366;
+    margin-top: 0;
+}
+
+.image-containery {
+    padding: 0px;
+}
+
+.image-containery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Extra images container */
+.extra-images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 40px;
+    padding: 10px;
+    background-color: #f5f5f5;
+}
+
+.extra-image {
+    width: 23%;
+
+    height: auto;
+    margin: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* .extra-image:hover {
+    transform: scale(1.1);
+} */
+
+/* Responsive styles */
+@media (min-width: 768px) {
+    .containery {
+        flex-direction: row;
+        margin: 20px 5px;
+    }
+
+    .sidebary {
+        width: 60%;
+        max-width: 300px;
+        height: 20vh;
+    }
+
+    .content-wrappery {
+        display: flex;
+        flex-wrap: wrap;
+        flex-grow: 1;
+    }
+
+    .content {
+        flex: 1 1 60%;
+        max-width: 100%;
+    }
+
+    .image-containery {
+        flex: 1 1 40%;
+        max-width: 40%;
+    }
+
+    .sidebary-option.active {
+        width: 100%;
+    }
+}
+
+@media (max-width: 767px) {
+    .containery {
+        margin: 10px;
+    }
+
+    .sidebary {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .sidebary-option {
+        /* width: auto; */
+        margin: 5px;
+    }
+
+    .content, .image-containery {
+        width: 100%;
+    }
+
+    .extra-image {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .extra-image {
+        width: calc(100% - 0px);
+    }
+
+
+
+
+}
+
+
+
+
+
+
+section{
+  position: relative;  
+  height: auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.swiper{
+  width: 90%;
+  max-width: 1200px;
+}
+
+.card{
+  position: relative;
+  background: #fff;
+  border-radius: 10px;
+  height: 100%;
+  min-height: 250px;
+  margin: 20px 0;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card::before{
+  content: "";
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  background: white;
+  border-radius: 20px 20px 0 0;
+}
+
+.card .card-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  position: relative;
+  z-index: 100;
+}
+
+section .card .video{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+ 
+
+}
+
+section .card .video video{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+
+}
+
+/* Pagination and navigation buttons */
+.swiper-pagination{
+  position: absolute;
+  top: 100%;
+  text-align: center;
+}
+
+.swiper-pagination-bullet{
+  height: 7px;
+  width: 26px;
+  border-radius: 25px;
+  background: #c1c1c1;
+}
+
+.swiper-button-next, .swiper-button-prev{
+  opacity: 0.7;
+  color: #c1c1c1;
+  transition: all 0.3s ease;
+}
+.swiper-button-next:hover, .swiper-button-prev:hover{
+  opacity: 1;
+  color:#c1c1c1;
+}
+
+/* === Media Queries for Responsiveness === */
+
+/* For laptops and desktops */
+@media screen and (min-width: 768px) {
+  .card .card-content {
+    padding: 0px;
+  }
+
+  section .card .video {
+    height: 100%;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+}
+
+/* For mobile devices */
+@media screen and (max-width: 767px) {
+ 
+  section {
+    padding: 10px;
+  }
+
+  .swiper {
+    width: 100%;
+  }
+
+  section .card .video {
+    height: 100%;
+  }
+
+  /* Adjust for single card view */
+  .swiper-slide {
+    width: 100% !important;
+  }
+
+  .swiper-button-next, .swiper-button-prev {
+    display: none; /* Hide navigation buttons for mobile */
+  }
+
+  .swiper-pagination {
+    bottom: 0;
+    top: auto; /* Move pagination to the bottom on mobile */
+  }
+}
+/* Styling for the product name */
+.card .product-name {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  padding: 5px;
+  background-color:transparent;
+  width: 100%;
+  border-radius: 0 0 10px 10px; /* Match the card's rounded corners */
+}
+
+.logo {
+    text-align: center; /* Center by default on larger screens */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    /* For mobile devices */
+    .logo {
+        text-align: left; /* Align logo to the left on mobile */
+    }
+
+    .logo img {
+        height: 200px;
+        margin-left: -30px; /* Adjust the height for mobile */
+    }
+}
+
+@media (min-width: 769px) {
+    /* For larger devices like laptops */
+    .logo img {
+        height: 200px; /* Adjust the height for laptops */
+    }
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="continer-fluid bg-nav ">
+        <div class="container-lg p-0 p-lg-1">
+            <nav class="navbar navbar-expand-lg pe-0 py-0  ">
+                <a class="navbar-brand ms-3  mx-lg-0" href="index.html">
+                    <img src="image/gslogo.png" class="logo-brand"/>
+                </a>
+                <div class="navbar-toggler menu-btn order-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation" >
+                    <div class="menu-btn__burger"></div>
+                </div>
+                <div class="collapse navbar-collapse order-3 order-lg-1 p-0 " id="navbarNav">
+                      <ul class="navbar-nav  ms-auto  d-flex justify-content-center align-items-center bg-md-nav py-3 px-3 py-lg-0">
+                   
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="about.html">About us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="news.html">Business Area</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header  link-header-active" href="projects.html">Product</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="order.html">Our facalties</a>
+                        </li>    
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="privacy.html">Quality</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link nav-link-Header" href="contact.html">Contact</a>
+                        </li>  
+                    </ul>
+                </div>
+              
+            </nav>
+        </div>
+    </div>
+
+    <div class=" bg-scan">
+        <div class=" container-lg">
+            <nav class="pt-5" style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html" class="breadcrumb-a">Home</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Business Area</li>
+                </ol>
+              </nav>
+            <h1 class="title">BUSINESS AREA</h1>
+        </div>
+    </div>
+
+
+
+   
+
+
+
+            <div class="bg-light-30">
+                <div class="container-lg p-2 px-lg-3 div-white">
+                    <div class="containery">
+                        <div class="sidebary">
+                            <button class="sidebary-option active" data-option="construction" id="button1">PRECISION MACHINING PARTS</button>
+                            <button class="sidebary-option" data-option="agriculture" id="button2">HYDRAULIC DAMPER PARTS</button>
+                            <button class="sidebary-option" data-option="aftermarket" id="button3">POINT LINKAGE PARTS</button>
+                        </div>
+
+
+
+                        <div class="content-wrappery">
+                            <div class="content" id="content" style="padding: 20px;">
+                                <!-- Content will be dynamically inserted here -->
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                 
+
+                    <section class="with">
+                        <div class="swiper mySwiper containerapy">
+                          <div class="swiper-wrapper content">
+                      
+                            <div class="swiper-slide card">
+                              <div class="card-content">
+                                <div class="video">
+                                  <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="product-name">Product Name 1</div> <!-- Product name added here -->
+                              </div>
+                            </div>
+                      
+                            <div class="swiper-slide card">
+                              <div class="card-content">
+                                <div class="video">
+                                  <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                </div>
+                                <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                              </div>
+                            </div>
+
+                            <div class="swiper-slide card">
+                                <div class="card-content">
+                                  <div class="video">
+                                    <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                  </div>
+                                  <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                                </div>
+                              </div>
+
+
+                              <div class="swiper-slide card">
+                                <div class="card-content">
+                                  <div class="video">
+                                    <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                  </div>
+                                  <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                                </div>
+                              </div>
+
+
+                              <div class="swiper-slide card">
+                                <div class="card-content">
+                                  <div class="video">
+                                    <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                  </div>
+                                  <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                                </div>
+                              </div>
+
+
+                              <div class="swiper-slide card">
+                                <div class="card-content">
+                                  <div class="video">
+                                    <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                  </div>
+                                  <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                                </div>
+                              </div>
+
+
+                              <div class="swiper-slide card">
+                                <div class="card-content">
+                                  <div class="video">
+                                    <video src="./WhatsApp Video 2024-09-29 at 21.46.38_05b440e6.mp4" autoplay muted loop></video>
+                                  </div>
+                                  <div class="product-name">Product Name 2</div> <!-- Product name added here -->
+                                </div>
+                              </div>
+                      
+                            <!-- Repeat the same structure for other video cards -->
+                      
+                          </div>
+                        </div>
+                      
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-pagination"></div>
+                      </section>
+                      
+                   
+                    
+                    <div id="extra-images" class="extra-images-container" style="padding: 20px;">
+                        <!-- Extra images will be inserted here dynamically -->
+                    </div>  
+
+                   
+                </div>
+                
+            </div>
+            
+
+      
+
+    <div class="container-fluid bg-footer pt-5">
+        <div class="container-lg mt-0 mt-lg-0 pt-0 pt-lg-0">
+            <div class="row pb-4">
+                <div class="col-lg-4 mt-5">
+                    <a href="index.html"><img src="image2/logo-white-removebg-preview2.png" class="logo-brand"/></a>
+                   <div class="mt-3">
+                    <h5 class="link-footer-parent"><span class="">ADDRESS</span> </h5>
+                    <p class="footer-company-desc">
+                        C-16, Sector-22, Meerut Road Industrial Area, Ghaziabad, Uttar Pradesh, 201003.
+                    </p>
+                    <p class="footer-company-desc"> Email: Gsenterprisesgzb@gmail.com <br>Email: info@gsenterprises.com</P> 
+                    <p class="footer-company-desc"> Phone No.: +91 9899972449 <br> Phone No.: +91 7982761179 </P>
+                      
+                </div>
+                </div>
+                <div class="col-lg-4 fw-bold mt-5 pe-5 ">
+                    <h5 class="link-footer-parent"><span class="">USEFUL LINKS</span> </h5>
+                    <div class="row row-cols-2 w-100">
+                        <div class="col">
+                            <ul class="nav flex-column ">
+                                <li class="nav-item">
+                                    <a href="index.html" class="nav-link ms-0 mb-1 px-0  link-footer">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="about.html" class="nav-link ms-0  mb-1 px-0 link-footer link-active-footer">About us</a>
+                                </li>
+                                <li class="nav-item"></li>
+                                    <a href="news.html" class="nav-link ms-0 mb-1  px-0 link-footer">Business Area</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="projects.html" class="nav-link ms-0 mb-1  px-0 link-footer">Product</a>
+                                </li>
+                               
+                                <li class="nav-item">
+                                    <a href="order.html" class="nav-link ms-0  mb-1 px-0 link-footer">Our facalties</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col">
+                            <ul class="nav flex-column ">
+                            </li>
+                            <li class="nav-item">
+                                <a href="privacy.html" class="nav-link ms-0 mb-1  px-0 link-footer">Quality</a>
+                            </li>
+                                <li class="nav-item"></li>
+                                    <a href="contact.html" class="nav-link ms-0 mb-1 px-0  link-footer">Contact us</a>
+                                </li>
+                                <!-- <li class="nav-item">
+                                    <a href="career.html" class="nav-link ms-0 mb-1  px-0 link-footer">Career</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="faq.html" class="nav-link ms-0 mb-1  px-0 link-footer">FAQ</a>
+                              
+                                <li class="nav-item">
+                                    <a href="terms.html" class="nav-link ms-0 mb-1  px-0 link-footer">Term use</a>
+                                </li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mt-5">
+                    <h5 class="link-footer-parent"><span class="">SOCAL MEDIA LINKS</span> </h5>
+
+                            
+                    <div class="mt-4">
+                      <!-- text -->
+                        <div class="d-inline-block   me-3">
+                            <a href="https://twitter.com/amaasrealestate">
+                                <i class="fa-brands fa-twitter footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://api.whatsapp.com/message/UZV7GQTD6S7FA1">
+                                <i class="fa-brands fa-whatsapp footer-links"></i>
+                            </a>
+                        </div>
+                        
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.youtube.com/channel/UCKftYeW9JhMnSlUM8ORun6w">
+                                <i class="fa-brands fa-youtube footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.instagram.com/amaasrealestate/">
+                                <i class="fa-brands fa-instagram footer-links"></i>
+                            </a>
+                        </div>
+                        <div class="d-inline-block  me-3">
+                            <a href="https://www.linkedin.com/company/amaasrealestate/">
+                                <i class="fa-brands fa-linkedin-in footer-links"></i>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bg-footer text-center text-white fw-bold  fs-12 py-4 footer-border-top">
+         All rights reserved to GS Enterprise © 2024
+    </div>
+    <!-- Bootstrap JS-->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- Pages JS Common-->
+    <script src="js/common.js"></script>
+    <script>
+        var newsdiv=document.getElementById('innerNews');
+        for(let n of news)
+        {
+            newsdiv.innerHTML+=`
+            <div class="col-lg-4 my-3">
+                    <div class=" bg-white p-3">
+                        <img src="image/${n.img}" alt="" class="img-news">
+                        
+                       
+                    </div>
+                </div>
+            `;
+        }
+    </script>
+
+<script>
+    const contentData = {
+        construction: {
+            title: "AGRI MACHINARY",
+            content: `
+                <p>GSE is a manufacturer of 3-Point Linkage Parts for agricultural machinery. </br>  Product Portfolio offered to the agriculture segment includes 3-Point Linkage parts, Precision Machined Parts (PMP), Power take-off (PTO) components and Forgings.</p>
+            `,
+            extraImages: [
+                "./mech/a (1).jpg",
+                "./mech/a (1).png",
+                "./mech/a (2).jpg",
+                "./mech/a (2).png",
+                "./mech/a (3).png",
+                "./mech/a (4).png",
+                "./mech/a (5).png",
+                "./mech/a (5).png",
+            ],
+            backgroundImage: "./image2/bus-back5.jpg"
+        },
+        agriculture: {
+            title: "CONSTRUCTION AND FORESTRY",
+            content: `
+                <p>GSE is a supplier for precision machined parts (PMP) and Hydraulic Cylinder Parts to the mobile equipment market and in particular to the construction market. </p>
+            `,
+            extraImages: [
+                "./image/banner5.jpg",
+                "./image/banner5.jpg",
+                "./image/banner5.jpg",
+                "./image/banner5.jpg"
+            ],
+            backgroundImage: "./image2/bus-back2.jpg"
+        },
+        aftermarket: {
+            title: "RAILWAY",
+            content: `
+                <p>GS ENTERPRISES is the leading manufacturer of bogie parts </br>  specialization  in hydraulic damper parts. We are the leading railway parts manufacturer for safety critical components for both conventional and LHB coaches</p>
+            `,
+            extraImages: [
+                "./image/banner6.jpg ",
+                "./image/banner6.jpg",
+                "./image/banner6.jpg",
+                "./image/banner6.jpg"
+            ],
+            backgroundImage: "./image2/bus-back4.jpg"
+        }
+    };
+
+    function updateContent(option) {
+        const content = document.getElementById('content');
+        const bgScan = document.querySelector('.bg-scan');
+        const data = contentData[option];
+
+        // Update content
+        content.innerHTML = `
+            <h1>${data.title}</h1>
+            ${data.content}
+        `;
+
+        // Update background image
+        bgScan.style.backgroundImage = `url(${data.backgroundImage})`;
+
+        // Update extra images
+        const extraImagesContainer = document.getElementById('extra-images');
+        extraImagesContainer.innerHTML = ''; // Clear previous images
+        data.extraImages.forEach(imageSrc => {
+            const imgElement = document.createElement('img');
+            imgElement.src = imageSrc;
+            imgElement.alt = `${data.title} Extra Image`;
+            imgElement.classList.add('extra-image');
+            extraImagesContainer.appendChild(imgElement);
+        });
+    }
+
+    document.querySelectorAll('.sidebary-option').forEach(button => {
+        button.addEventListener('click', () => {
+            document.querySelectorAll('.sidebary-option').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            updateContent(button.dataset.option);
+        });
+    });
+
+    // Initialize with Construction & Forestry content
+    updateContent('construction');
+    </script>
+
+
+
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script>var swiper = new Swiper(".mySwiper", {
+        slidesPerView: 3, // Default for larger screens
+        spaceBetween: 30,
+        slidesPerGroup: 3,
+        loop: true,
+        loopFillGroupWithBlank: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+          // When window width is >= 320px (mobile)
+          320: {
+            slidesPerView: 1, // Show 1 card on mobile
+            slidesPerGroup: 1,
+            spaceBetween: 10,
+          },
+          // When window width is >= 768px (tablets/laptops)
+          768: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 20,
+          },
+          // When window width is >= 1024px (desktops)
+          1024: {
+            slidesPerView: 4,
+            slidesPerGroup:4,
+            spaceBetween: 30,
+          },
+        },
+    });
+    </script>
+<script>
+    // Get references to the buttons and the section
+    const button1 = document.getElementById('button1');
+    const button2 = document.getElementById('button2');
+    const button3 = document.getElementById('button3');
+    const section = document.querySelector('section.with');
+  
+    // Function to show the section
+    function showSection() {
+      section.style.display = 'block';
+    }
+  
+    // Function to hide the section
+    function hideSection() {
+      section.style.display = 'none';
+    }
+  
+    // Event listeners for buttons
+    button1.addEventListener('click', showSection);
+    button2.addEventListener('click', hideSection);
+    button3.addEventListener('click', hideSection);
+  
+    // Initially show the section with the first button by default
+    window.onload = showSection;
+  </script>
+
+
+
+  
+</body>
+</html>
